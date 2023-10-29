@@ -1,0 +1,200 @@
+// Primary
+$Light-red: hsla(0, 93%, 24%, 0.13);
+$Orangey-yellow: hsla(39, 100%, 56%, 0.13);
+$Green-teal: hsla(166, 100%, 37%, 0.13);
+$Cobalt-blue: hsla(234, 85%, 45%, 0.13);
+$Light-red2: hsl(0, 100%, 67%);
+$Orangey-yellow2: hsl(39, 100%, 56%);
+$Green-teal2: hsl(166, 100%, 37%);
+$Cobalt-blue2: hsl(234, 85%, 45%);
+
+// Gradients
+$Light-slate-blue: hsl(252, 100%, 67%);
+$Light-royal-blue: hsl(241, 81%, 54%);
+$Violet-blue: hsla(256, 72%, 46%, 1);
+$Persian-blue: hsla(241, 72%, 46%, 0);
+
+// Neutral
+$White: hsl(0, 0%, 100%);
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 89%);
+$Dark-gray-blue: hsl(224, 30%, 27%);
+
+@font-face {
+  font-family: hanken;
+  src: url(/GitHub/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center;
+  bottom: 0;
+  position: absolute;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+  background:$White;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'hanken', sans-serif;
+  font-weight: 700;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 12px 12px 20px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    
+    .result-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 320px;
+      height: 470px;
+      background: linear-gradient($Light-slate-blue, $Light-royal-blue);
+      color: $White;
+      border-radius: 25px;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      // position: relative
+      
+      .great-info {
+        font-size: 1.6rem;
+      }
+
+      .result-title {
+        padding-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .result-title,
+      .small-number,
+      .text-info {
+        color: $Light-lavender;
+      }
+
+      .circle {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background: linear-gradient($Violet-blue, $Persian-blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 2px 4px 15px 4px rgba(0, 0, 0, 0.2);
+
+        .big-number {
+          font-size: 3.5rem;
+        }
+
+      }
+    }
+
+    .summary {
+      width: 340px;
+      height: 400px;
+      // margin: 2rem;
+      padding: 0.5rem 2rem;
+      font-weight: 700;
+      
+      .summary-title {
+        font-size: 1.3rem;
+      }
+
+      .wrapper {
+        margin: 0.5rem;
+        padding: 1rem 0;
+        // background-color: blue;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-evenly;
+        // align-items: center;
+        
+        img {
+          padding-right: 0.5rem;
+          
+        }
+
+        .reaction-wrapper > span,
+        .memory-wrapper > span,
+        .verbal-wrapper > span,
+        .visual-wrapper > span {
+          display: flex;
+          align-items: center;
+        }
+
+        .reaction-wrapper,
+        .memory-wrapper,
+        .verbal-wrapper,
+        .visual-wrapper {
+          display: flex;
+          padding: 1.2rem 0.5rem;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+          height: 3rem;
+          border-radius: 7px;
+          font-weight: 700;
+
+          img {
+            padding-top: 3px;
+          }
+
+          .grey-score {
+            color: #b1b1b1; 
+          }
+        }
+
+        .reaction-wrapper {
+          background: $Light-red;
+          color: $Light-red2;
+        }
+
+        .memory-wrapper {
+          background: $Orangey-yellow;
+          color: $Orangey-yellow2;
+        }
+
+        .verbal-wrapper {
+          background: $Green-teal;
+          color: $Green-teal2;
+        }
+
+        .visual-wrapper {
+          background: $Cobalt-blue;
+          color: $Cobalt-blue2;
+        }
+      }
+
+      .btn {
+        border: none;
+        width: 100%;
+        height: 50px;
+        background: $Dark-gray-blue;
+        border-radius: 25px;
+        font-weight: 700;
+        color: $White;
+        cursor: pointer;
+        // transition: background 0.3s ease-in-out;
+
+        &:hover {
+          background: linear-gradient($Light-slate-blue, $Light-royal-blue);
+        }
+      }
+    }
+  }
+}
+
+@import 'mobile';
